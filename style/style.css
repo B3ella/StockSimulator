@@ -1,0 +1,63 @@
+html {
+  scroll-behavior: smooth;
+  font-family: "Oswald", sans-serif;
+}
+body {
+  margin: 15px;
+}
+.carteira {
+  margin: 40px 0;
+}
+.carteira__button-recarga,
+.carteira__input-recarga {
+  height: 30px;
+  margin: 0;
+  border: none;
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.carteira__recarga {
+  background-color: #f0f0f0f0;
+  border-bottom: solid #333 1px;
+  padding: 0 2px;
+}
+.carteira__display-saldo {
+  text-align: end;
+}
+.carteira__info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.carteira__titulo {
+  font-size: 30px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.my-stocks {
+  width: 100%;
+}
+.my-stocks__body {
+  padding: 5px;
+}
+.my-stocks__header {
+  border-bottom: #333 solid 2px;
+  font-size: 19px;
+  padding-bottom: 2px;
+  text-align: start;
+}
+.stocks {
+  display: flex;
+  justify-content: space-evenly;
+}
+.stocks-disponiveis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+}
+.titulo-principal {
+  font-size: 40px;
+}

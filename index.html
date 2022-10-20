@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Simulator</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+    </style>
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <h1 class="titulo-principal">Stock Simulator</h1>
+    <div class="container">
+      <div class="user-data">
+        <div class="carteira">
+          <div class="carteira__info">
+            <h2 class="carteira__titulo">Carteira</h2>
+            <p class="carteira__display-saldo">
+              Saldo Atual: <span class="carteira__saldo"></span> USD
+            </p>
+          </div>
+          <div class="carteira__recarga">
+            <input
+              type="number"
+              class="carteira__input-recarga"
+              placeholder="valor da recarga"
+              value=""
+            /><button class="carteira__button-recarga">Recarregar</button>
+          </div>
+        </div>
+        <div class="portifolio">
+          <table class="my-stocks">
+            <thead class="my-stocks__header">
+              <tr>
+                <th>Ação</th>
+                <th>Volume</th>
+              </tr>
+            </thead>
+            <tbody class="my-stocks__body"></tbody>
+          </table>
+        </div>
+      </div>
+      <ul class="stocks-disponiveis"></ul>
+      <div class="current-stock">
+        <h3 class="current-stock__symbol">codigo da ação</h3>
+        <p>
+          <span class="current-stock__currency">USD</span>
+          <span class="current-stock__value">preço</span>
+        </p>
+        <input
+          class="current-stock__input-volume"
+          placeholder="quantidade"
+          value="1"
+          type="number"
+        />
+        <button id="buy" class="current-stock__button-comprar">Buy</button>
+        <button id="sell" class="current-stock__button-vender">Sell</button>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
