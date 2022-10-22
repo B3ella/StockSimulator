@@ -44,20 +44,23 @@
         </div>
       </div>
       <ul class="stocks-disponiveis"></ul>
-      <div class="current-stock">
-        <h3 class="current-stock__symbol">codigo da ação</h3>
-        <p>
-          <span class="current-stock__currency">USD</span>
-          <span class="current-stock__value">preço</span>
-        </p>
-        <input
-          class="current-stock__input-volume"
-          placeholder="quantidade"
-          value="1"
-          type="number"
-        />
-        <button id="buy" class="current-stock__button-comprar">Buy</button>
-        <button id="sell" class="current-stock__button-vender">Sell</button>
+      <div>
+        <div class="current-stock">
+          <h3 class="current-stock__symbol">codigo da ação</h3>
+          <p>
+            <span class="current-stock__currency">USD</span>
+            <span class="current-stock__value">preço</span>
+          </p>
+          <input
+            class="current-stock__input-volume"
+            placeholder="quantidade"
+            value="1"
+            type="number"
+          />
+          <button id="buy" class="current-stock__button-comprar">Buy</button>
+          <button id="sell" class="current-stock__button-vender">Sell</button>
+        </div>
+        <canvas width="1050" height="600" id="myCanvas"></canvas>
       </div>
     </div>
     <script type="module" src="./main.js"></script>
