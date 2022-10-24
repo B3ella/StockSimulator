@@ -16,7 +16,7 @@ class Carteira {
     this.displaySaldo();
   }
   displaySaldo() {
-    let saldoDaCarteira = document.querySelector(".carteira__saldo");
+    let saldoDaCarteira = document.getElementById("carteira-saldo");
     saldoDaCarteira.innerText = this.saldo.toFixed(2);
   }
 
@@ -32,7 +32,7 @@ class Carteira {
   }
 
   recharge() {
-    let inputRecharge = document.querySelector(".carteira__input-recarga");
+    let inputRecharge = document.getElementById("carteira-input-recarga");
     let valorDaRecarga = inputRecharge.value == "" ? 0 : inputRecharge.value;
     this.adicionarSaldo(valorDaRecarga);
     inputRecharge.value = "";

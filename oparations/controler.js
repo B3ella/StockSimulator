@@ -1,19 +1,19 @@
 export default function oparationsControler(user) {
-  let inputRecharge = document.querySelector(".carteira__input-recarga");
+  let inputRecharge = document.getElementById("carteira-input-recarga");
   inputRecharge.addEventListener("keypress", (e) => {
     e.key === "Enter" ? user.carteira.recharge() : null;
   });
 
-  let buttonRecharge = document.querySelector(".carteira__button-recarga");
+  let buttonRecharge = document.getElementById("carteira-button-recarga");
   buttonRecharge.addEventListener("click", (e) => {
     e.preventDefault();
     user.carteira.recharge();
   });
 
-  let buttonComprar = document.querySelector(".current-stock__button-comprar");
+  let buttonComprar = document.getElementById("sell-stock");
   setTransactionEventListner(buttonComprar);
 
-  let buttonVender = document.querySelector(".current-stock__button-vender");
+  let buttonVender = document.getElementById("buy-stock");
   setTransactionEventListner(buttonVender);
 
   function setTransactionEventListner(element) {

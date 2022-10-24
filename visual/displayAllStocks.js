@@ -5,9 +5,10 @@ export default function displayAllStocks() {
     let buttonSelectStock = document.createElement("button");
     buttonSelectStock.textContent = stock.Código;
     buttonSelectStock.id = stock.Código;
-    buttonSelectStock.classList.add("selecionar-acao");
+    buttonSelectStock.classList.add("available-stocks__button");
+    buttonSelectStock.dataset.selectStock = true;
 
-    let ul = document.querySelector(".stocks-disponiveis");
+    let ul = document.getElementById("available-stocks");
     ul.appendChild(buttonSelectStock);
   });
 }

@@ -13,8 +13,6 @@ export default function displayGraph(stockValues) {
     drawCandle(data, i);
   }
   function drawCandle(data, index) {
-    canvaCTX.fillStyle = data.close > data.open ? "green" : "red";
-
     let maxBodyValue = Math.max(data.close, data.open);
     let minBodyValue = Math.min(data.close, data.open);
 
@@ -22,6 +20,7 @@ export default function displayGraph(stockValues) {
     let bodyStartY = (highestSotckValue - maxBodyValue) * delta;
     let bodyWidth = canva.width / stockValues.length;
     let bodyStartX = canva.width - bodyWidth * (index + 1);
+    canvaCTX.fillStyle = data.close > data.open ? "green" : "red";
     canvaCTX.fillRect(bodyStartX, bodyStartY, bodyWidth, bodyHeight);
 
     canvaCTX.beginPath();
@@ -34,6 +33,9 @@ export default function displayGraph(stockValues) {
     let closeHeight = (highestSotckValue - data.close) * delta;
     canvaCTX.moveTo(bodyStartX, closeHeight);
     canvaCTX.lineTo(bodyStartX + bodyWidth, closeHeight);
+
+    canvaCTX.strokeStyle = "#999";
+    canvaCTX.lineWidth = 2;
     canvaCTX.stroke();
   }
 }

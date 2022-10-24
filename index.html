@@ -16,19 +16,30 @@
     <div class="container">
       <div class="user-data">
         <div class="carteira">
-          <div class="carteira__info">
-            <h2 class="carteira__titulo">Carteira</h2>
-            <p class="carteira__display-saldo">
-              Saldo Atual: <span class="carteira__saldo"></span> USD
+          <div class="operation-interface">
+            <h2 class="operation-interface__titulo">Carteira</h2>
+            <p class="operation-interface__info">
+              Saldo Atual:
+              <span
+                id="carteira-saldo"
+                class="operation-interface__span"
+              ></span>
+              USD
             </p>
           </div>
-          <div class="carteira__recarga">
+          <div class="operation-controller">
             <input
               type="number"
-              class="carteira__input-recarga"
+              class="operation-controller__input"
+              id="carteira-input-recarga"
               placeholder="valor da recarga"
               value=""
-            /><button class="carteira__button-recarga">Recarregar</button>
+            /><button
+              id="carteira-button-recarga"
+              class="operation-controller__button"
+            >
+              Recarregar
+            </button>
           </div>
         </div>
         <div class="portifolio">
@@ -39,28 +50,48 @@
                 <th>Volume</th>
               </tr>
             </thead>
-            <tbody class="my-stocks__body"></tbody>
+            <tbody id="my-stocks-body" class="my-stocks__body"></tbody>
           </table>
         </div>
       </div>
-      <ul class="stocks-disponiveis"></ul>
+      <ul id="available-stocks" class="available-stocks"></ul>
       <div>
         <div class="current-stock">
-          <h3 class="current-stock__symbol">codigo da ação</h3>
-          <p>
-            <span class="current-stock__currency">USD</span>
-            <span class="current-stock__value">preço</span>
-          </p>
-          <input
-            class="current-stock__input-volume"
-            placeholder="quantidade"
-            value="1"
-            type="number"
-          />
-          <button id="buy" class="current-stock__button-comprar">Buy</button>
-          <button id="sell" class="current-stock__button-vender">Sell</button>
+          <div class="operation-interface">
+            <h3 class="operation-interface__titulo" id="stock-symbol">
+              codigo da ação
+            </h3>
+            <p class="operation-interface__info">
+              <span class="operation-interface__span" id="stock-currency"
+                >USD</span
+              >
+              <span class="operation-interface__span" id="stock-value"
+                >preço</span
+              >
+            </p>
+          </div>
+          <div class="operation-controller">
+            <input
+              class="operation-controller__input"
+              id="stock-input-volume"
+              placeholder="quantidade"
+              value="1"
+              type="number"
+            />
+            <button id="buy-stock" class="operation-controller__button">
+              Buy
+            </button>
+            <button id="sell-stock" class="operation-controller__button">
+              Sell
+            </button>
+          </div>
         </div>
-        <canvas width="1050" height="600" id="myCanvas"></canvas>
+        <canvas
+          width="1050"
+          height="600"
+          class="candleStickChart"
+          id="myCanvas"
+        ></canvas>
       </div>
     </div>
     <script type="module" src="./main.js"></script>

@@ -2,9 +2,7 @@ import canvas from "./displayGraph.js";
 import getStockBySymbol from "../api/getStockBySymbol.js";
 
 export default function selectStocks() {
-  let selectButtonsList = document.querySelectorAll(".selecionar-acao");
-  let selectButtonsMyStocks = document.querySelectorAll(".my-stock");
-  let allSelectStockButtons = [...selectButtonsList, ...selectButtonsMyStocks];
+  let allSelectStockButtons = document.querySelectorAll("[data-select-stock]");
 
   allSelectStockButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -17,13 +15,13 @@ export default function selectStocks() {
 async function displaySelectedStock(symbol) {
   let stock = await getStockBySymbol(symbol);
 
-  let currentSymbol = document.querySelector(".current-stock__symbol");
+  let currentSymbol = document.getElementById("stock-symbol");
   currentSymbol.textContent = stock.symbol;
 
-  let currentStockValue = document.querySelector(".current-stock__value");
+  let currentStockValue = document.getElementById("stock-value");
   currentStockValue.innerText = stock.closeValue;
 
-  let currentStockCurrency = document.querySelector(".current-stock__currency");
+  let currentStockCurrency = document.getElementById("stock-currency");
   currentStockCurrency.innerText = stock.currency;
 
   canvas(stock.history);
