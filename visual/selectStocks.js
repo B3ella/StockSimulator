@@ -7,15 +7,18 @@ export default function selectStocks() {
   allSelectStockButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
+
       displaySelectedStock(button.id);
     });
   });
 }
 
 async function displaySelectedStock(symbol) {
+  let currentSymbol = document.getElementById("stock-symbol");
+  currentSymbol.textContent = "Baixando dados da Ação...";
+
   let stock = await getStockBySymbol(symbol);
 
-  let currentSymbol = document.getElementById("stock-symbol");
   currentSymbol.textContent = stock.symbol;
 
   let currentStockValue = document.getElementById("stock-value");
@@ -25,6 +28,7 @@ async function displaySelectedStock(symbol) {
   currentStockCurrency.innerText = stock.currency;
 
   canvas(stock.history);
+
   scrollTop();
 }
 

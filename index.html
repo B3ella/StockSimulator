@@ -54,7 +54,23 @@
           </table>
         </div>
       </div>
-      <ul id="available-stocks" class="available-stocks"></ul>
+      <div>
+        <div class="operation-interface">
+          <h2 class="operation-interface__titulo">Ações disponíveis</h2>
+        </div>
+        <div class="operation-controller">
+          <input
+            type="text"
+            class="operation-controller__input"
+            id="valor-da-pesquisa"
+            placeholder="Código da Ação"
+            value=""
+          /><button id="pesquisar-ação" class="operation-controller__button">
+            Pesquisar
+          </button>
+        </div>
+        <ul id="available-stocks" class="available-stocks"></ul>
+      </div>
       <div>
         <div class="current-stock">
           <div class="operation-interface">

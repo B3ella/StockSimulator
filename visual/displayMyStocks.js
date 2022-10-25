@@ -1,5 +1,3 @@
-import selectStocks from "./selectStocks.js";
-
 export default function displayMyStocks(myStocks) {
   let stockDisplay = document.getElementById("my-stocks-body");
   stockDisplay.innerHTML = "";
@@ -8,8 +6,6 @@ export default function displayMyStocks(myStocks) {
     let stockElement = createHTMLElementForStock(stock);
     stockDisplay.appendChild(stockElement);
   });
-
-  selectStocks();
 }
 
 function createHTMLElementForStock(stock) {
