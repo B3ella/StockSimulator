@@ -98,3 +98,18 @@ thead th {
 .available-stocks::-webkit-scrollbar {
   display: none;
 }
+@media screen and (max-width: 768px) {
+  .available-stocks {
+    height: 150px;
+  }
+  .candleStickChart {
+    width: 80vw;
+    height: auto;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .container > div {
+    margin-top: 5rem;
+  }
+}

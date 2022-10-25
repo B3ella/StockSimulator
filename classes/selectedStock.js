@@ -11,6 +11,8 @@ export default class SelectedStock {
 
     this.value = this.stockValue * this.volume;
 
-    this.isReal = this.symbol != "codigo da ação" && this.volume > 0;
+    let unavailableStock = this.symbol.includes("NÃO DISPONIVEL");
+    this.isReal =
+      this.symbol != "codigo da ação" && this.volume > 0 && !unavailableStock;
   }
 }
