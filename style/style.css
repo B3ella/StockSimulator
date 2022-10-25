@@ -1,10 +1,7 @@
-html {
-  font-family: "Oswald", sans-serif;
-  scroll-behavior: smooth;
-}
 body {
   background-color: #0f3460;
   color: #ddd;
+  font-family: "Oswald", sans-serif;
   margin: 15px;
 }
 h1 {
@@ -94,4 +91,10 @@ thead th {
 .available-stocks {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  height: 700px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+.available-stocks::-webkit-scrollbar {
+  display: none;
 }

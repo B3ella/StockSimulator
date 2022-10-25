@@ -1,4 +1,6 @@
 export default function displayGraph(stockValues) {
+  if (stockValues.length === 0) return false;
+  
   let canva = document.getElementById("myCanvas");
   let canvaCTX = canva.getContext("2d");
 
@@ -7,6 +9,29 @@ export default function displayGraph(stockValues) {
   let highestSotckValue = Math.max(...stockValues.map((x) => x.high));
   let lowestStockValue = Math.min(...stockValues.map((x) => x.low));
   let delta = canva.height / (highestSotckValue - lowestStockValue);
+
+  canvaCTX.fillStyle = "#ddd";
+  canvaCTX.font = "16px roboto";
+  canvaCTX.beginPath();
+
+  canvaCTX.moveTo(0, canva.height);
+  canvaCTX.lineTo(canva.width, canva.height);
+  canvaCTX.fillText(lowestStockValue, 0, canva.height - 3);
+
+  canvaCTX.moveTo(0, 0);
+  canvaCTX.lineTo(canva.width, 0);
+  canvaCTX.fillText(highestSotckValue, 0, 16);
+
+  canvaCTX.moveTo(0, canva.height / 2);
+  canvaCTX.lineTo(canva.width, canva.height / 2);
+  canvaCTX.fillText(
+    ((highestSotckValue + lowestStockValue) / 2).toFixed(2),
+    0,
+    canva.height / 2 + 16
+  );
+
+  canvaCTX.strokeStyle = "#ffffff";
+  canvaCTX.stroke();
 
   for (let i = 0; i < stockValues.length; i++) {
     const data = stockValues[i];
@@ -39,3 +64,10 @@ export default function displayGraph(stockValues) {
     canvaCTX.stroke();
   }
 }
+function clearCanva() {
+  let canva = document.getElementById("myCanvas");
+  let canvaCTX = canva.getContext("2d");
+  canvaCTX.clearRect(0, 0, canva.width, canva.height);
+  canvaCTX.beginPath();
+}
+export { clearCanva, displayGraph };
