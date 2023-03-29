@@ -3,6 +3,8 @@
 Um simulador de compra e venda de ações baseado na bolsa de NY
 
 ## [Veja esse projeto](https://famous-tapioca-e544c4.netlify.app)
+!(Exemplo)[https://drive.google.com/file/d/1noJvwQ08T8a1ELpmjwKp3lRmPu6FUzlV/view?usp=sharing]
+
 
 ## Features
 
