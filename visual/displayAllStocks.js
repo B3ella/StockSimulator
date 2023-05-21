@@ -15,9 +15,10 @@ export default function displayAllStocks() {
 }
 
 function pesquisa() {
-  let inputPesquisa = document.getElementById("valor-da-pesquisa");
-  let key = inputPesquisa.value.toUpperCase();
-  let match = allStocks.filter((stock) => stock.Symbol.includes(key));
+  const key = document.getElementById("valor-da-pesquisa").value.toUpperCase();
+
+  const match = allStocks.filter((stock) => stock.Symbol.includes(key));
+  
   displayStocks(match);
   selectStocks();
 }
