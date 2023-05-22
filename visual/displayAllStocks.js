@@ -5,16 +5,16 @@ export default function displayAllStocks() {
   displayStocks(allStocks);
 
   document.getElementById("valor-da-pesquisa").addEventListener("input", () => {
-    pesquisa();
+    search();
   });
 
   document.getElementById("pesquisar-ação").addEventListener("click", (e) => {
     e.preventDefault();
-    pesquisa();
+    search()
   });
 }
 
-function pesquisa() {
+function search() {
   const key = document.getElementById("valor-da-pesquisa").value.toUpperCase();
 
   const match = allStocks.filter((stock) => stock.Symbol.includes(key));
