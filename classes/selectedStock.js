@@ -1,18 +1,19 @@
-export default class SelectedStock {
-  constructor() {
-    let htmlSymbol = document.getElementById("stock-symbol");
-    this.symbol = htmlSymbol.textContent.toUpperCase();
+export default function getSelectedStock() {
 
-    let htmlVolume = document.getElementById("stock-input-volume");
-    this.volume = htmlVolume.value;
+  let htmlSymbol = document.getElementById("stock-symbol");
+  const symbol = htmlSymbol.textContent.toUpperCase();
 
-    let htmlValue = document.getElementById("stock-value");
-    this.stockValue = htmlValue.innerText;
+  let htmlVolume = document.getElementById("stock-input-volume");
+  const volume = htmlVolume.value;
 
-    this.value = this.stockValue * this.volume;
+  let htmlValue = document.getElementById("stock-value");
+  const stockValue = htmlValue.innerText;
 
-    let unavailableStock = this.symbol.includes("NÃO DISPONIVEL");
-    this.isReal =
-      this.symbol != "codigo da ação" && this.volume > 0 && !unavailableStock;
-  }
+  const value = stockValue * volume;
+
+  let unavailableStock = symbol.includes("NÃO DISPONIVEL");
+  const isReal =
+    symbol != "codigo da ação" && Fvolume > 0 && !unavailableStock;
+
+  return {symbol, volume, stockValue, value, isReal}
 }

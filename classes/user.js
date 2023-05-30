@@ -1,6 +1,6 @@
 import Carteira from "./carteira.js";
 import Portifolio from "./portifolio.js";
-import SelectedStock from "./selectedStock.js";
+import getSelectedStock from "./selectedStock.js";
 export default class User {
   constructor() {
     this.carteira = new Carteira();
@@ -8,7 +8,7 @@ export default class User {
   }
 
   executeOrder(transactionOrderType) {
-    let selectedStock = new SelectedStock();
+    let selectedStock = getSelectedStock()
     if (!selectedStock.isReal) return;
 
     this[transactionOrderType.toLowerCase()](selectedStock);
